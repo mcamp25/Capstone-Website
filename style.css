@@ -6,7 +6,7 @@
 }
 body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.7;
+    line-height: 1.8;
     color: #334155;
     background-color: #f8fafc;
 }
@@ -59,9 +59,9 @@ h1 {
     width: 240px;
     padding: 16px 0;
     text-decoration: none;
-    font-weight: 700;border-radius: 8px;
-    transition: all 0.3s;
-    cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-main {
     background-color: #2dd4bf;
@@ -106,5 +106,84 @@ footer {
     background: #0f172a;
     color: #94a3b8;
     font-size: 0.9rem;
+}
+.div-container, 
+section.container,
+#about,
+#projects,
+#contact{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
 
+/*Section Headers */ 
+h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+h2 ::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #2dd4bf;
+    margin: 10 px auto 0;
+}
+
+#projects h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    text-align: left;
+}
+
+#projects p {
+    text-align: left;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.project-link
+.skills-highlight ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap : 12px;
+    list-style: none;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skills-highlight li {
+    background: #f1f5f9;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+.personal-signoff,
+about-text p,
+#projects p {
+margin-bottom: 20px;
+line-height: 1.8;
+font-size: 1.1rem;
+text-align: center;
+color: #4a5568;
+}
+
+footer {
+    padding: 40px 20px;
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+}
+#contact .hero-btns {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    
 }
