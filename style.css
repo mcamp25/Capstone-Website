@@ -132,22 +132,25 @@ h2::after {
 }
 
 .skills-highlight ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap : 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 15px;
     list-style: none;
-    justify-content: center;
     padding: 0;
+    max-width: 800px;
+    margin: 30px auto; /* Centers the whole grid */
 }
 
 .skills-highlight li {
     background: #f1f5f9;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
     color: #475569;
     border: 1px solid #e2e8f0;
+    text-align: left; /* Keeps the text professional and easy to read */
+    display: flex;
+    flex-direction: column; /* Stacks the title over the details */
 }
 
 #projects h3 {
@@ -217,8 +220,61 @@ margin-bottom: 10px;
     color: #ffffff !important;
     border-color: #1e293b !important;
 }
+form-intro {
+    text-align: center;      
+    width: 100%;             
+    margin: 0 auto 30px auto; 
+    color: #475569;         
+    font-size: 1.1rem;
+}
+
+.div-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    width: 100%; 
+}
+
+.contact-form .btn-main {
+   width: 280px; /* Matches your hero buttons for consistency */
+    padding: 14px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease;
+}
+.error-text {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    height: 1rem; 
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%; /* Makes inputs stretch to the 500px limit */
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Prevents padding from breaking the width */
+}
 
 footer {
+    
+    width: 100%;
+
     padding: 40px 20px;
     background-color: #0f172a;
     color: #94a3b8;

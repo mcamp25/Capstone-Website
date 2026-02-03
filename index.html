@@ -37,32 +37,39 @@ rel="stylesheet">
     where i turned a curiosity for how things work into a professional toolkit. I am a strong believer that coding is as 
     much about resilience and problem solving as it is about the syntax. </p>
 
-    <div class="skills-highlight">
-    <ul>
-    <li><strong>Full-Stack:</strong>
-    ASP.NET MVC & Entity Framework</li>
 
-    <li><strong>Languages:</strong>
-    C#, Java, Kotlin, Swift, C++, JavaScript</li>
-
-    <li><strong>Web:</strong>
-    HTML5, CSS, Bootstrap</li>
-
-    <li><strong>Databases:</strong>
-    SQL, MySQL, MongoDB</li>
-
-    <li><strong>Tools:</strong>
-    Android Studio, VS Code, Git & Github </li>
-    
-    <li><strong>Quality:</strong>
-    Unit Testing & Debugging</li>
-    </ul>
-    </div>
 <p class="personal-signoff">
 My transition into the professional world is driven by that same curiosity. I believe that by combining technical logic 
 with a problem solving mindset, I can build digital tools that are both resilient and intuitive. 
 I'm ready to move past the syntax and start delivering real world value to a development team.
 </p>
+<div class="skills-highlight">
+    <div class="skills-section-header">
+    <span class="skills-eyebrow">Expertise</span>
+    <h2>Technical Toolkit</h2>
+    <div class="header-line"></div>
+</div>
+    <ul>
+        <li>
+            <strong><i class="fas fa-mobile-alt"></i> Mobile Development:</strong>
+            <span>Kotlin, Jetpack Compose, Android Studio</span>
+        </li>
+        <li>
+            <strong><i class="fas fa-code"></i> Frontend Web:</strong>
+            <span>HTML5, CSS3, jQuery Mobile</span>
+        </li>
+        <li>
+            <strong><i class="fas fa-exchange-alt"></i> API & Data:</strong>
+            <span>Retrofit, Google Books API, JSON</span>
+        </li>
+        <li>
+            <strong><i class="fas fa-tools"></i> Tools & Version Control:</strong>
+            <span>Git, GitHub, VS Code</span>
+        </li>
+    </ul>
+</div>
+    </ul>
+    </div>
 </section>
 <section id="projects">
     <h2>My Work</h2>
@@ -81,18 +88,7 @@ I'm ready to move past the syntax and start delivering real world value to a dev
             </div>
         </div>
 
-        <div class="project-card">
-            <div class="project-header">
-                <h3>Secure Health Monitoring App</h3>
-                <span class="category-tag">Completed Coursework</span>
-            </div>
-            <p>A secure system for thyroid cancer patients to track and visualize medical records locally using JavaScript and HTML/CSS. This project focused on security controls and data visualization.</p>
-            <div class="links">
-                <a href="https://github.com/mcamp25/thyroid-health-monitoring-app.git" target="_blank" class="btn-sub project-btn">
-                    <i class="fab fa-github"></i> View Health App Repo
-                </a>
-            </div>
-        </div>
+       
 
         <div class="project-card">
             <div class="project-header">
@@ -109,28 +105,56 @@ I'm ready to move past the syntax and start delivering real world value to a dev
 
     </div>
 </section>
-<section id="contact" 
-class="contact-section">
-<div class="div-container">
-<h2>Let's Connect</h2>
-<p class="personal-signoff">
-    Im ready to bring my technical tenacity to a professional team. 
-    Whether you are looking for a developer who can untangle complex logic or simply want to connect,
-     I'd love to hear from you.
-</p>
-
-    <div class="hero-btns"> 
-<a href="mailto:campm08@gmail.com" class="btn-main">Email Me</a>
-   <a href="https://www.linkedin.com/in/mckenna-camp-402222328/" target="_blank" class="btn-sub">
-    <i class="fab fa-linkedin"></i> LinkedIn
-</a>
-</a>
-</a>
-</div>
-</div>
+<section id="contact" class="contact-section">
+    <div class="div-container">
+        <h2>Let's Connect</h2>
+        <p class="form-intro">If you want to contact me, please fill out the form below:</p>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <span class="error-text" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+                <span class="error-text" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <span class="error-text" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn-main">Send Message</button>
+        </form>
+        
+        </div> 
 </section>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents the page from refreshing
+    
+    let isValid = true;
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+
+
+    if (!emailPattern.test(email)) {
+        document.getElementById('emailError').innerText = "Please enter a valid email address.";
+        isValid = false;
+    } else {
+        document.getElementById('emailError').innerText = "";
+    }
+
+    // If valid, trigger the mailto or API
+    if (isValid) {
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+        window.location.href = `mailto:campm08@gmail.com?subject=Contact from ${name}&body=${message}`;
+    }
+});
+</script>
 <footer>
     <p>&copy; 2026 Mckenna.Builds | Mckenna Camp</p>
 </footer>
+
 </body>
 </html>
