@@ -3,6 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}* {
+    box-sizing: border-box; /* Includes padding and borders in the total width */
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Safety net to prevent side-scrolling */
 }
 body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -131,17 +140,15 @@ h2::after {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.skills-highlight ul {
+.tools-highlight ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     list-style: none;
     padding: 0;
-    max-width: 800px;
-    margin: 30px auto; /* Centers the whole grid */
 }
 
-.skills-highlight li {
+.tools-highlight li {
     background: #f1f5f9;
     padding: 15px;
     border-radius: 8px;
@@ -153,20 +160,20 @@ h2::after {
     flex-direction: column; /* Stacks the title over the details */
 }
 
-#projects h3 {
+#builds h3 {
     color: #1e293b;
     font-size: 1.5rem;
     margin-top: 30px;
     text-align: left;
 }
 
-#projects p {
+#builds p {
     text-align: left;
     margin-bottom: 15px;
     max-width: 100%;
 }
 
-.project-link {
+.builds-link {
     display: inline-block;
     color: #2dd4bf;
     font-weight: 600;
@@ -175,17 +182,17 @@ h2::after {
     border-bottom: 1px solid transparent;
     transition: 0.3s;
 }
-.project-link :hover {
+.builds-link:hover {
     border-bottom: 1px solid #2dd4bf;
 }
-.project-grid {
-    display: flex;
-    flex-direction: column;
+.build-grid {
+   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
     gap: 30px;
-    margin-top: 40px;
+    width: 100%;
 }
 
-.project-card {
+.build-card {
     background: #ffffff;
     padding: 30px;
     border-radius: 12px;
@@ -194,7 +201,7 @@ h2::after {
     transition: transform 0.3s ease;
 }
 
-.project-card:hover {
+.build-card:hover {
     transform: translateY(-5px);
 }
 
@@ -206,7 +213,7 @@ text-transform: uppercase;
 color: #2dd4bf;
 margin-bottom: 10px;
 }
-.project-btn {
+.build-btn {
     width: auto !important;
     padding: 10px 20px !important;
     font-size: 0.9rem;
@@ -215,7 +222,7 @@ margin-bottom: 10px;
     margin-top: 15px;
 }
 
-.project-btn:hover {
+.build-btn:hover {
     background-color: #1e293b !important;
     color: #ffffff !important;
     border-color: #1e293b !important;
@@ -295,4 +302,38 @@ footer {
 #contact .btn-sub i {
     color: inherit;
     color: #0077b5;
+}
+
+/* Tablet & Large Phones */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem; /* Shrinks title so it doesn't wrap 4 times */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stacks logo over links */
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .hero-btns {
+        flex-direction: column; /* Stacks buttons vertically */
+        width: 100%;
+    }
+
+    .btn-main, .btn-sub {
+        width: 100%; /* Wider hit-area for thumbs */
+        max-width: 320px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .build-card {
+        padding: 20px; /* More space for content */
+    }
 }
