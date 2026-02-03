@@ -11,18 +11,22 @@ body {
     background-color: #f8fafc;
 }
 
-/*The Container*/
-.div-container, .container {
+.div-container, 
+section.container,
+#about,
+#projects,
+#contact{
     max-width: 900px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 50px 20px;
 }
 
 /*Hero Section*/
 .hero {
     background:linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color:#f8fafc;
-    padding: 100px 20px;
+    padding-top: 100px;
+     padding-bottom: 60px;
     text-align: center;
 }
 
@@ -38,15 +42,23 @@ h1 {
     letter-spacing: -1px;
 }
 
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
+h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-*/ Stacked Buttons */ 
+h2 ::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #2dd4bf;
+    margin: 10 px auto 0;
+}
+
 .hero-btns {
     display: flex;
     flex-direction: column;
@@ -55,13 +67,16 @@ h1 {
     margin-top: 40px;
 }
 .btn-main, .btn-sub {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 240px;
     padding: 16px 0;
+    text-align: center;
     text-decoration: none;
     font-weight: 700;
     border-radius: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
 }
 .btn-main {
     background-color: #2dd4bf;
@@ -69,69 +84,35 @@ h1 {
 }
 .btn-sub {
     border: 2px solid #94a3b8;
-    color: #f8fafc;
+    color: #f8fafc !important;
+    background-color: transparent;
+    gap : 10px;
+}
+.btn-sub i {
+    color: inherit;
 }
 .btn-main:hover, .btn-sub:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
-/*Content Sections*/
-h2 {
-    font-size: 2rem;
-    color: #0f172a;
-    margin-bottom: 25px;
-    border-bottom: 3px solid #2dd4bf;
-    display: inline-block;
-}
-strong {
-    color: #0f172a;
-}
+
 .skills-highlight ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap : 12px;
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
-    gap: 15px;
-    margin: 30px 0;
-
-}.skills-highlight li {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #2dd4bf;
+    justify-content: center;
+    padding: 0;
 }
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #0f172a;
-    color: #94a3b8;
+
+.skills-highlight li {
+    background: #f1f5f9;
+    padding: 10px 20px;
+    border-radius: 50px;
     font-size: 0.9rem;
-}
-.div-container, 
-section.container,
-#about,
-#projects,
-#contact{
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 80px 20px;
-}
-
-/*Section Headers */ 
-h2 {
-    font-size: 2.5rem;
-    color: #0f172a;
-    display: block;
-    text-align: center;
-    margin-bottom: 40px;
-}
-h2 ::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #2dd4bf;
-    margin: 10 px auto 0;
+    font-weight: 600;
+    color: #475569;
+    border: 1px solid #e2e8f0;
 }
 
 #projects h3 {
@@ -147,43 +128,37 @@ h2 ::after {
     max-width: 100%;
 }
 
-.project-link
-.skills-highlight ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap : 12px;
-    list-style: none;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.skills-highlight li {
-    background: #f1f5f9;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.9rem;
+.project-link {
+    display: inline-block;
+    color: #2dd4bf;
     font-weight: 600;
-    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    margin-bottom: 40px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
 }
-.personal-signoff,
-about-text p,
-#projects p {
-margin-bottom: 20px;
-line-height: 1.8;
-font-size: 1.1rem;
-text-align: center;
-color: #4a5568;
+.project-link :hover {
+    border-bottom: 1px solid #2dd4bf;
 }
-
 footer {
     padding: 40px 20px;
     background-color: #0f172a;
     color: #94a3b8;
     text-align: center;
 }
+
 #contact .hero-btns {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
     
+}
+#contact .btn-sub {
+    color: #0f172a !important;
+    border: 2px solid #0f172a;
+    gap: 10px;
+}
+#contact .btn-sub i {
+    color: inherit;
+    color: #0077b5;
 }
