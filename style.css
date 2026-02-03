@@ -11,6 +11,41 @@ body {
     background-color: #f8fafc;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff !important;
+     font-weight: 700;
+     text-transform: uppercase;
+     font-size: 0.9rem;
+     letter-spacing: 1px;
+     transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #2dd4bf !important;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff
+}
+
+
 .div-container, 
 section.container,
 #about,
@@ -50,7 +85,7 @@ h2 {
     margin-bottom: 25px;
 }
 
-h2 ::after {
+h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -140,6 +175,49 @@ h2 ::after {
 .project-link :hover {
     border-bottom: 1px solid #2dd4bf;
 }
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #2dd4bf;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-tag {
+display: inline-block;
+font-size: 0.75rem;
+font-weight: 700;
+text-transform: uppercase;
+color: #2dd4bf;
+margin-bottom: 10px;
+}
+.project-btn {
+    width: auto !important;
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+    color: #1e293b !important;
+    border-color: #cbd5e1 !important;
+    margin-top: 15px;
+}
+
+.project-btn:hover {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #1e293b !important;
+}
+
 footer {
     padding: 40px 20px;
     background-color: #0f172a;
