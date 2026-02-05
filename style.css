@@ -1,339 +1,263 @@
-/*Global Reset & Fonts*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}* {
-    box-sizing: border-box; /* Includes padding and borders in the total width */
-}
-
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Safety net to prevent side-scrolling */
-}
+/* --- Base Styles & Resets --- */
 body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.8;
-    color: #334155;
-    background-color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 16px; 
+    overflow-x: hidden;
+    width: 100%;
 }
 
-.navbar {
+/* --- Global Centering Container --- */
+.container, main section {
+    max-width: 1100px;
+    margin: 0 auto !important; 
+    padding: 80px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    max-width: 900px;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;       /* Centers items like cards and buttons */
+    text-align: center;        /* Centers text and paragraphs */
 }
 
-.navbar ul {
+/* --- Navigation: Split Side-by-Side --- */
+.navbar-centered {
+    width: 100%;
+    background-color: #0b1120;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px 5%; 
+    box-sizing: border-box;
+}
+
+.navbar-centered ul {
+    display: flex;
     list-style: none;
-    display: flex;
-    gap: 30px;
+    gap: 25px; 
+    padding: 0 !important; 
+    margin: 0 !important; 
 }
 
-.navbar a {
+.navbar-centered a {
     text-decoration: none;
-    color: #ffffff !important;
-     font-weight: 700;
-     text-transform: uppercase;
-     font-size: 0.9rem;
-     letter-spacing: 1px;
-     transition: color 0.3s ease;
+    color: #94a3b8;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.navbar a:hover {
-    color: #2dd4bf !important;
-}
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff
-}
+.navbar-centered a:hover { color: #2dd4bf; }
 
-
-.div-container, 
-section.container,
-#about,
-#projects,
-#contact{
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 20px;
+.logo { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: white;
 }
 
-/*Hero Section*/
+.brand-highlight { color: #2dd4bf !important; }
+
+/* --- Hero Section --- */
 .hero {
-    background:linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    color:#f8fafc;
-    padding-top: 100px;
-     padding-bottom: 60px;
-    text-align: center;
-}
-
-.brand-highlight {
-    color: #2dd4bf;
-    font-family: 'Fira Code', monospace;
-    font-style: italic;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
-}
-
-h2 {
-    font-size: 2.5rem;
-    color: #0f172a;
-    display: block;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #2dd4bf;
-    margin: 10 px auto 0;
-}
-
-.hero-btns {
+    background-color: #0b1120;
+    color: white;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    margin-top: 40px;
+    text-align: center;
 }
-.btn-main, .btn-sub {
+
+.hero h1 { 
+    font-size: clamp(2.2rem, 6vw, 3.8rem); 
+    margin: 10px 0 20px 0; 
+    font-weight: 800; 
+}
+
+.hero-subtitle { 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+    color: #2dd4bf; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+}
+
+.hero-tagline { 
+    font-size: 1.05rem; 
+    color: #94a3b8; 
+    max-width: 600px; 
+    margin: 0 auto 30px auto; /* Ensures centering */
+    text-align: center;
+}
+
+/* --- Buttons --- */
+.hero-btns { 
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+}
+
+.btn-main, .btn-github {
+    padding: 10px 20px; 
+    font-size: 0.85rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 240px;
-    padding: 16px 0;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-.btn-main {
-    background-color: #2dd4bf;
-    color: #0f172a;
-}
-.btn-sub {
-    border: 2px solid #94a3b8;
-    color: #f8fafc !important;
-    background-color: transparent;
-    gap : 10px;
-}
-.btn-sub i {
-    color: inherit;
-}
-.btn-main:hover, .btn-sub:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.tools-highlight ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-}
-
-.tools-highlight li {
-    background: #f1f5f9;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    color: #475569;
-    border: 1px solid #e2e8f0;
-    text-align: left; /* Keeps the text professional and easy to read */
-    display: flex;
-    flex-direction: column; /* Stacks the title over the details */
-}
-
-#builds h3 {
-    color: #1e293b;
-    font-size: 1.5rem;
-    margin-top: 30px;
-    text-align: left;
-}
-
-#builds p {
-    text-align: left;
-    margin-bottom: 15px;
-    max-width: 100%;
-}
-
-.builds-link {
-    display: inline-block;
-    color: #2dd4bf;
-    font-weight: 600;
-    text-decoration: none;
-    margin-bottom: 40px;
-    border-bottom: 1px solid transparent;
+    gap: 8px;
     transition: 0.3s;
 }
-.builds-link:hover {
-    border-bottom: 1px solid #2dd4bf;
+
+.btn-main { background-color: #2dd4bf; color: #0b1120; border: none; }
+.btn-github { border: 1.5px solid #475569; color: white; }
+
+/* --- About Me Paragraph --- */
+.intro-text {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
 }
-.build-grid {
-   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px;
+
+/* --- Technical Toolkit: Spaced & Centered --- */
+.tools-section { 
+    background-color: #f8fafc; 
+    width: 100%;
+}
+
+.tools-highlight { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; /* Spaced out tool cards */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-bubble {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 40px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;     
+    transition: 0.3s;
+}
+
+.skill-bubble:hover { transform: translateY(-5px); border-color: #2dd4bf; }
+.skill-bubble i { font-size: 2.2rem; color: #2dd4bf; margin-bottom: 15px; }
+
+/* --- Project Cards --- */
+.build-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    align-items: center; 
     width: 100%;
 }
 
 .build-card {
     background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid #2dd4bf; /* Teal Accent */
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-left: 5px solid #2dd4bf;
-    transition: transform 0.3s ease;
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+    transition: 0.3s;
+    text-align: left;
+    box-sizing: border-box;
 }
 
-.build-card:hover {
-    transform: translateY(-5px);
+.sub-label {
+    display: inline-block;
+    background-color: rgba(45, 212, 191, 0.1); 
+    color: #2dd4bf;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
-.category-tag {
-display: inline-block;
-font-size: 0.75rem;
-font-weight: 700;
-text-transform: uppercase;
-color: #2dd4bf;
-margin-bottom: 10px;
-}
-.build-btn {
-    width: auto !important;
-    padding: 10px 20px !important;
-    font-size: 0.9rem;
-    color: #1e293b !important;
-    border-color: #cbd5e1 !important;
-    margin-top: 15px;
-}
-
-.build-btn:hover {
-    background-color: #1e293b !important;
-    color: #ffffff !important;
-    border-color: #1e293b !important;
-}
-form-intro {
-    text-align: center;      
-    width: 100%;             
-    margin: 0 auto 30px auto; 
-    color: #475569;         
-    font-size: 1.1rem;
+.repo-link {
+    font-size: 0.85rem;
+    color: #ffffff;
+    background-color: #0b1120;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3 ease;
+    margin-top: 20px;
+    border: 2px solid #0b1120;
+    cursor: pointer;
 }
 
-.div-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    text-align: center;
+.repo-link:hover, .repo-link:active {
+    background-color: #2dd4bf;
+    border-color: #cbd5e1;
 }
-.contact-form {
-    display: flex;
-    flex-direction: column;
+
+/* --- Contact Section: FIXED --- */
+.contact-section { 
+    background-color: #f8fafc; 
+    width: 100%;
+}
+
+.contact-form { 
+    width: 100%; 
+    max-width: 600px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
     align-items: center; 
-    gap: 20px;
-    max-width: 500px;
-    margin: 0 auto;
+    margin-top: 30px;
 }
 
-.form-group {
+.form-row { 
+    display: flex; 
+    gap: 15px; 
     width: 100%; 
 }
 
-.contact-form .btn-main {
-   width: 280px; /* Matches your hero buttons for consistency */
-    padding: 14px;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.2s ease;
-}
-.error-text {
-    color: #ff4444;
-    font-size: 0.8rem;
-    margin-top: 4px;
-    height: 1rem; 
+.contact-form input, .contact-form textarea {
+    width: 100%; 
+    padding: 12px 15px; 
+    font-size: 0.95rem; 
+    border-radius: 6px; 
+    border: 1.5px solid #cbd5e1; 
+    font-family: inherit; 
+    box-sizing: border-box; /* Critical Fix for Width */
 }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%; /* Makes inputs stretch to the 500px limit */
-    padding: 12px 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 1rem;
-    box-sizing: border-box; /* Prevents padding from breaking the width */
-}
+.contact-form textarea { height: 120px; resize: none; }
 
-footer {
-    
-    width: 100%;
+/* --- Teal Accents for Headers --- */
+h2::first-letter { color: #2dd4bf; }
 
-    padding: 40px 20px;
-    background-color: #0f172a;
-    color: #94a3b8;
-    text-align: center;
-}
-
-#contact .hero-btns {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    
-}
-#contact .btn-sub {
-    color: #0f172a !important;
-    border: 2px solid #0f172a;
-    gap: 10px;
-}
-#contact .btn-sub i {
-    color: inherit;
-    color: #0077b5;
-}
-
-/* Tablet & Large Phones */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.2rem; /* Shrinks title so it doesn't wrap 4 times */
-    }
-
-    .navbar {
-        flex-direction: column; /* Stacks logo over links */
+/* --- Mobile Fixes --- */
+@media (max-width: 700px) {
+    .navbar-centered {
+        flex-direction: column; /* Prevents nav squeezing */
         gap: 15px;
-        padding: 20px;
     }
-
-    .hero-btns {
-        flex-direction: column; /* Stacks buttons vertically */
-        width: 100%;
-    }
-
-    .btn-main, .btn-sub {
-        width: 100%; /* Wider hit-area for thumbs */
-        max-width: 320px;
-    }
+    .navbar-centered ul { gap: 15px; }
+    .form-row { flex-direction: column; } /* Fixes contact row cut-off */
+    .hero-btns { flex-direction: column; width: 100%; align-items: center; }
+    .btn-main, .btn-github { width: 90%; justify-content: center; }
 }
 
-/* Small Phones */
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .build-card {
-        padding: 20px; /* More space for content */
-    }
+footer { 
+    padding: 40px; 
+    background: #0b1120; 
+    color: #94a3b8; 
+    text-align: center; 
 }

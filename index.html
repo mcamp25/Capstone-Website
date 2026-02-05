@@ -5,149 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>MC.Builds | Mobile and Web Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
+<nav class="navbar-centered">
+    <div class="logo"><span class="brand-highlight">M</span>C.<span class="brand-highlight">Builds</span></div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 <header class="hero">
-    <nav class="navbar">
-        <div class="logo">MC<span class="brand-highlight">Builds</span></div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#builds">Builds</a></li>
-            <Li><a href="#toolkit">Tools</a></Li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
     <div class="hero-content">
+        <p class="hero-subtitle">MCKENNA CAMP | MOBILE AND WEB DEVELOPER</p>
         <h1>Building Beyond the Syntax</h1>
-        <p class="hero-subtitle">Mckenna Camp | Mobile and Web Developer</p>
         <p class="hero-tagline">Bridging the gap between complex logic and seamless user experience through persistence and precise code.</p>
-    </div>
-    <div class="hero-btns">
-        <a href="#builds" class="btn-main">View My Work</a>
-        <a href="https://github.com/mcamp25" class="btn-sub" aria-label="GitHub Profile">
-            <i class="fab fa-github"></i> GitHub
-        </a>
+        <div class="hero-btns">
+            <a href="#builds" class="btn-main">View My Builds</a>
+            <a href="https://github.com/mcamp25" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
+        </div>
     </div>
 </header>
 
 <main>
-    <section id="about">
-    <h2>About Me</h2>
-    <p>I recently graduated from my <strong>Mobile and Web Development</strong> program, where I turned a curiosity for how things work into a professional toolkit. I am a strong believer that coding is as much about resilience and problem solving as it is about the syntax.</p>
-    <p class="personal-signoff">
-        My transition into the professional world is driven by that same curiosity. I'm ready to move past the syntax and start delivering real-world value to a development team.
-    </p>
-</section>
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p class="intro-text">I recently graduated from my <strong>Mobile and Web Development</strong> program, where I turned a curiosity for how things work into a professional toolkit. I am a strong believer that coding is as much about resilience as it is about syntax.</p>
+    </section>
 
-<section id="toolkit" class="tools-section">
-    <div class="div-container">
-        <h2>Technical Toolkit</h2>
-        <div class="tools-highlight">
-            <ul>
-                <li>
-                    <strong><i class="fas fa-mobile-alt"></i> Mobile:</strong> 
-                    <span>Kotlin, Jetpack Compose, Android Studio</span>
-                </li>
-                <li>
-                    <strong><i class="fas fa-database"></i> Persistence:</strong> 
-                    <span>Room Database, Retrofit, JSON</span>
-                </li>
-                <li>
-                    <strong><i class="fas fa-vial"></i> Quality:</strong> 
-                    <span>JUnit, Espresso UI Testing, Debugging</span>
-                </li>
-                <li>
-                    <strong><i class="fas fa-terminal"></i> Workflow:</strong> 
-                    <span>Git, GitHub, VS Code</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-    <section id="builds">
-        <h2>Featured Builds</h2>
-        <div class="build-grid">
-            <div class="build-card">
-                <div class="project-header">
-                    <span class="category-tag">Capstone Project</span>
-                    <h3>Android Book Tracker: Readstack</h3>
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <h2>Technical Toolkit</h2>
+            <div class="tools-highlight">
+                <div class="skill-bubble">
+                    <i class="fas fa-mobile-alt"></i> 
+                    <div><strong>Mobile</strong><span>Kotlin, Jetpack Compose</span></div>
                 </div>
-                <p>A comprehensive tracking app built with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>. It utilizes <strong>Room</strong> for local persistence and <strong>Retrofit</strong> for API integration. Codebase verified through <strong>JUnit</strong> and <strong>Espresso</strong> testing.</p>
-                <div class="links">
-                    <a href="https://github.com/mcamp25/readstack-Capstone-.git" target="_blank" class="btn-sub build-btn">
-                        <i class="fab fa-github"></i> View Repo
-                    </a>
+                <div class="skill-bubble">
+                    <i class="fas fa-code"></i> 
+                    <div><strong>Web</strong><span>HTML5, CSS3, JavaScript</span></div>
+                </div>
+                <div class="skill-bubble">
+                    <i class="fas fa-database"></i> 
+                    <div><strong>Persistence</strong><span>Room, Retrofit, JSON</span></div>
+                </div>
+                <div class="skill-bubble">
+                    <i class="fas fa-terminal"></i> 
+                    <div><strong>Workflow</strong><span>Git, GitHub, VS Code, Android Studio</span></div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="build-card">
-                <div class="project-header">
-                    <span class="category-tag">Coursework</span>
-                    <h3>Temperature Converter</h3>
-                </div>
-                <p>A responsive converter app translating values between scales using semantic HTML and jQuery Mobile. Focused on cross-platform logic consistency and responsive UI.</p>
-                <div class="links">
-                    <a href="https://github.com/mcamp25/temperature-converter-app.git" target="_blank" class="btn-sub build-btn">
-                        <i class="fab fa-github"></i> View Repo
-                    </a>
-                </div>
+    <section id="builds" class="container">
+        <h2>Featured Builds</h2>
+        <div class="build-grid">
+            <div class="build-card floating">
+                <span class="sub-label">Capstone Project</span>
+                <h3>Readstack</h3>
+                <p>An android book tracking application built with Kotlin, Jetpack Compose and Retrofit. It allows users to track their physical and digital collections.</p>
+                <a href="https://github.com/mcamp25/readstack-Capstone-.git" class="repo-link">View Build Repo →</a>
+            </div>
+
+            <div class="build-card floating">
+                <span class="sub-label">Completed Coursework</span>
+                <h3>Temperature Converter</h3>
+                <p>A responsive converter app that translates temperature values between different scales using semantic HTML and Jquery Mobile.</p>
+                <a href="https://github.com/mcamp25/temperature-converter-app.git" class="repo-link">View Build Repo →</a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
-        <div class="div-container">
+        <div class="container contact-container">
             <h2>Let's Connect</h2>
-            <p class="form-intro">Let's chat about building resilient mobile tools together—drop me a message below!</p>
-            
+            <p class="contact-sub">I'm ready to bring my technical tenacity to a professional team. Drop me a message below!</p>
             <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <span class="error-text" id="nameError"></span>
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <span class="error-text" id="emailError"></span>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" placeholder="Your Message" required></textarea>
-                    <span class="error-text" id="messageError"></span>
-                </div>
+                <textarea id="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn-main">Send Message</button>
             </form>
-        </div> 
+            <div id="formStatus"></div>
+        </div>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 MC.Builds | Mckenna Camp</p>
+    <p>&copy; 2026 Mckenna.Builds | Mckenna Camp</p>
 </footer>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    let isValid = true;
-    const email = document.getElementById('email').value;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 
-    if (!emailPattern.test(email)) {
-        document.getElementById('emailError').innerText = "Please enter a valid email address.";
-        isValid = false;
-    } else {
-        document.getElementById('emailError').innerText = "";
-    }
-
-    if (isValid) {
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
         const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
-        window.location.href = `mailto:campm08@gmail.com?subject=Contact from ${name}&body=${message}`;
-        const form = document.getElementById('contactForm');
-        form.innerHTML = `<div style="padding: 20px; text-align: center;"><h3>Message Sent!</h3><p>Your email app should be opening now.</p></div>`;
-    }
-});
+        const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+        const body = encodeURIComponent(`From: ${name} (${email})\n\n${message}`);
+        window.location.href = `mailto:campm08@gmail.com?subject=${subject}&body=${body}`;
+        document.getElementById('formStatus').innerHTML = `<div style="margin-top: 15px; padding: 10px; border: 1px solid #2dd4bf; border-radius: 6px; background: #f0fdfa; color: #0f766e;">Opening email app...</div>`;
+        this.reset();
+    });
 </script>
 </body>
 </html>
