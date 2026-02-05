@@ -17,11 +17,11 @@ body {
     padding: 80px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;       /* Centers items like cards and buttons */
-    text-align: center;        /* Centers text and paragraphs */
+    align-items: center;      
+    text-align: center;        
 }
 
-/* --- Navigation: Split Side-by-Side --- */
+/* --- Navigation: --- */
 .navbar-centered {
     width: 100%;
     background-color: #0b1120;
@@ -87,7 +87,7 @@ body {
     font-size: 1.05rem; 
     color: #94a3b8; 
     max-width: 600px; 
-    margin: 0 auto 30px auto; /* Ensures centering */
+    margin: 0 auto 30px auto; 
     text-align: center;
 }
 
@@ -120,7 +120,7 @@ body {
     text-align: center;
 }
 
-/* --- Technical Toolkit: Spaced & Centered --- */
+/* --- Technical Toolkit: --- */
 .tools-section { 
     background-color: #f8fafc; 
     width: 100%;
@@ -203,10 +203,19 @@ body {
 
 .repo-link:hover, .repo-link:active {
     background-color: #2dd4bf;
-    border-color: #cbd5e1;
+    border-color: #2dd4bf;
+    color: #0b1120;
+    transform: translateY(-2px);
+
+}
+.repo-link i {
+    transition: transform 0.3s ease;
+}
+.repo-link:hover i {
+    transform: translateX(4px);
 }
 
-/* --- Contact Section: FIXED --- */
+/* --- Contact Section: */
 .contact-section { 
     background-color: #f8fafc; 
     width: 100%;
@@ -235,7 +244,7 @@ body {
     border-radius: 6px; 
     border: 1.5px solid #cbd5e1; 
     font-family: inherit; 
-    box-sizing: border-box; /* Critical Fix for Width */
+    box-sizing: border-box; 
 }
 
 .contact-form textarea { height: 120px; resize: none; }
@@ -246,11 +255,11 @@ h2::first-letter { color: #2dd4bf; }
 /* --- Mobile Fixes --- */
 @media (max-width: 700px) {
     .navbar-centered {
-        flex-direction: column; /* Prevents nav squeezing */
+        flex-direction: column;
         gap: 15px;
     }
     .navbar-centered ul { gap: 15px; }
-    .form-row { flex-direction: column; } /* Fixes contact row cut-off */
+    .form-row { flex-direction: column; } 
     .hero-btns { flex-direction: column; width: 100%; align-items: center; }
     .btn-main, .btn-github { width: 90%; justify-content: center; }
 }
