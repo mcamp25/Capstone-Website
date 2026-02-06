@@ -210,7 +210,12 @@ h2.section-title {
 .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #2dd4bf; }
 .form-group textarea { height: 160px; resize: none; }
 footer { background: #0b1120; color: #64748b; padding: 60px 20px; text-align: center; border-top: 1px solid #1e293b; }
-
+/* Centering the Send Message Button */
+.contact-form .btn-main {
+    margin: 10px auto 0; /* 'auto' on the left and right forces it to the center */
+    width: fit-content;  /* Prevents the button from stretching to the full width */
+    display: inline-flex; /* Keeps the icon and text aligned inside */
+}
 /* --- 7. RESPONSIVE --- */
 @media (max-width: 900px) {
     .navbar-centered { flex-direction: column; padding: 15px; }
