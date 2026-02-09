@@ -21,7 +21,7 @@
     </nav>
 
     <header class="hero">
-        <span class="hero-subtitle">Mckenna Camp | Mobile and Web Developer</span>
+        <span class="hero-subtitle">McKenna Camp | Mobile and Web Developer</span>
         <h1>Building Beyond the Syntax</h1>
         <p class="hero-tagline">Bridging the gap between complex logic and seamless user experience through persistence and precise code.</p>
         <div class="hero-btns">
@@ -58,7 +58,7 @@
                         <div class="badge-grid">
                             <span class="skill-badge" onclick="connectToProject('android', event)">Kotlin</span>
                             <span class="skill-badge" onclick="connectToProject('android', event)">Jetpack Compose</span>
-                            <span class="skill-badge" onclick="connectToProject('android', event)">Room Database</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">Room</span>
                             <span class="skill-badge" onclick="connectToProject('android', event)">Retrofit</span>
                         </div>
                     </div>
@@ -97,7 +97,6 @@
                             <span class="skill-badge" onclick="connectToProject('android', event)">API Integration</span>
                             <span class="skill-badge" onclick="connectToProject('android', event)">JSON Parsing</span>
                             <span class="skill-badge" onclick="connectToProject('android', event)">Data Persistence</span>
-                            <span class="skill-badge" onclick="connectToProject('android', event)">MVVM Architecture</span>
                         </div>
                     </div>
                 </div>
@@ -180,7 +179,7 @@
             <div class="contact-split">
                 <div>
                     <h2>Ready to <br><span class="brand-highlight">Collaborate?</span></h2>
-                    <p>I'm currently looking for new opportunities. if you want to discuss technical innovations you can reach me below! </p>
+                    <p>I'm currently looking for new opportunities. If you want to discuss technical innovations you can reach me below! </p>
                     <div class="contact-methods">
                         <div class="method-item"><i data-lucide="map-pin"></i> Available for Remote, Hybrid or In-Person Work</div>
                     </div>
@@ -209,6 +208,18 @@
     <div id="lb" class="lightbox-overlay" onclick="this.classList.remove('active')">
         <button class="lb-close">&times;</button>
         <img src="" alt="Zoomed view">
+    </div>
+
+    <div id="emailAppModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Choose Email App</h3>
+            <p>Select your preferred email application:</p>
+            <div class="modal-buttons">
+                <button class="modal-btn" onclick="selectEmailApp('gmail')">Gmail</button>
+                <button class="modal-btn" onclick="selectEmailApp('outlook')">Outlook</button>
+                <button class="modal-btn" onclick="selectEmailApp('default')">Default Mail App</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -240,7 +251,7 @@
                     match.classList.add('connected-highlight');
                     match.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-                
+
                 setTimeout(() => {
                     document.querySelectorAll('.project-featured-card').forEach(card => {
                         card.style.opacity = "1";
@@ -250,34 +261,51 @@
                 }, 3000);
             };
 
-           
+
 const contactForm = document.getElementById('contactForm');
 const btn = document.getElementById('btn');
 const hiddenLink = document.getElementById('hiddenMailto');
+const emailAppModal = document.getElementById('emailAppModal');
+
+let selectedEmailApp = localStorage.getItem('selectedEmailApp') || null;
+
+window.selectEmailApp = function(app) {
+    selectedEmailApp = app;
+    localStorage.setItem('selectedEmailApp', app);
+    emailAppModal.classList.remove('active');
+    sendEmail();
+};
+
+function sendEmail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const msg = document.getElementById('message').value;
+
+    let mailtoLink;
+    if (selectedEmailApp === 'gmail') {
+        mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=campm08@gmail.com&su=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+    } else if (selectedEmailApp === 'outlook') {
+        mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=campm08@gmail.com&subject=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+    } else {
+        mailtoLink = `mailto:campm08@gmail.com?subject=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+    }
+
+    window.open(mailtoLink, '_blank');
+}
 
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault(); // Stop page reload
 
-  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const msg = document.getElementById('message').value;
-
-  
-  btn.classList.add('sending');
-
-  
-  const mailtoLink = `mailto:campm08@gmail.com?subject=Inquiry from ${name}&body=From: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
-  hiddenLink.href = mailtoLink;
-
-  
-  setTimeout(() => {
-    hiddenLink.click(); 
-    
-    
-    btn.classList.replace('sending', 'success');
-    btn.innerHTML = '<span>Check Mail App!</span>';
-  }, 600);
+  if (selectedEmailApp) {
+    btn.classList.add('sending');
+    setTimeout(() => {
+      sendEmail();
+      btn.classList.replace('sending', 'success');
+      btn.innerHTML = '<span>Check Mail App!</span>';
+    }, 600);
+  } else {
+    emailAppModal.classList.add('active');
+  }
 });
 
 
@@ -288,6 +316,15 @@ contactForm.addEventListener('submit', function(e) {
                     lb.querySelector('img').src = img.src;
                     lb.classList.add('active');
                 };
+            });
+
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar-centered');
+                if (window.scrollY > 0) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             });
         });
     </script>
