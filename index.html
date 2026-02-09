@@ -189,13 +189,9 @@
                     <div class="form-group"><input type="text" id="name" placeholder="Your Name" required></div>
                     <div class="form-group"><input type="email" id="email" placeholder="Your Email" required></div>
                     <div class="form-group"><textarea id="message" placeholder="How can I help you?" required></textarea></div>
-                    <button type="submit" id="btn" class="btn-main">
-                    <span class="btn-text">Send Message</span>
-                    <i data-lucide="send" class="airplane-icon"></i>
-                     </button>
-                    </form>
-
-                    <a id="hiddenMailto" style="display: none;"></a>
+                    <button type="submit" class="btn-main" id="btn">
+                        <span id="btxt">Send Message</span>
+                        <i data-lucide="send" id="plane" style="display:none"></i>
                     </button>
                 </form>
             </div>
@@ -250,36 +246,24 @@
                 }, 3000);
             };
 
-           
-const contactForm = document.getElementById('contactForm');
-const btn = document.getElementById('btn');
-const hiddenLink = document.getElementById('hiddenMailto');
-
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault(); // Stop page reload
-
-  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const msg = document.getElementById('message').value;
-
-  
-  btn.classList.add('sending');
-
-  
-  const mailtoLink = `mailto:campm08@gmail.com?subject=Inquiry from ${name}&body=From: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
-  hiddenLink.href = mailtoLink;
-
-  
-  setTimeout(() => {
-    hiddenLink.click(); 
-    
-    
-    btn.classList.replace('sending', 'success');
-    btn.innerHTML = '<span>Check Mail App!</span>';
-  }, 600);
-});
-
+            const contactForm = document.getElementById('contactForm');
+            const btn = document.getElementById('btn');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const msg = document.getElementById('message').value;
+                    btn.classList.add('sending');
+                    if(window.lucide) lucide.createIcons();
+                    setTimeout(() => {
+                        const mailtoLink = `mailto:campm08@gmail.com?subject=Inquiry from ${name}&body=Sender Email: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+                        window.location.href = mailtoLink;
+                        btn.classList.replace('sending', 'success');
+                        btn.innerHTML = '<span>Message Sent!</span>';
+                    }, 800);
+                });
+            }
 
             document.querySelectorAll('.image-placeholder img').forEach(img => {
                 img.onclick = (e) => {
