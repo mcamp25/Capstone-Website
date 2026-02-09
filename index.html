@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MC.Builds | Mobile and Web Developer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.400.0/dist/umd/lucide.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -35,8 +35,8 @@
         <div class="about-split">
             <h2>The Developer <br><span class="brand-highlight">Behind the Code</span></h2>
             <div class="intro-text">
-                <p>I recently graduated from my <strong>Mobile and Web Development</strong> program, where i turned a curioisity for how things work into a professional toolkit. 
-                    I am a strong believer that coding is as much about resilience as it is about syntax.</p>
+                <p>I recently graduated from my <strong>Mobile and Web Development</strong> program, where I turned a curiosity for how things work into a professional toolkit. 
+                I am a strong believer that coding is as much about resilience as it is about syntax.</p>
             </div>
         </div>
     </section>
@@ -44,26 +44,61 @@
     <section id="tools" class="tools-section">
         <div class="container">
             <h2 class="section-title">Technical Toolkit</h2>
-            <div class="flex-stack">
-                <div class="wide-tool-card">
-                    <div class="tool-icon-box"><i data-lucide="layout"></i></div>
-                    <div class="tool-info">
-                        <strong>Android Development</strong>
-                        <p>Kotlin, Jetpack Compose, Retrofit, Room Database, Material Design</p>
+            <div class="flex-stack skill-tree-container">
+                <div class="tree-branch" onclick="toggleBranch(this)">
+                    <div class="wide-tool-card pillar">
+                        <div class="tool-icon-box"><i data-lucide="smartphone"></i></div>
+                        <div class="tool-info">
+                            <strong>Android Development</strong>
+                            <p>Click to explore the stack</p>
+                        </div>
+                        <i data-lucide="chevron-down" class="branch-arrow"></i>
+                    </div>
+                    <div class="branch-content">
+                        <div class="badge-grid">
+                            <span class="skill-badge" onclick="connectToProject('android', event)">Kotlin</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">Jetpack Compose</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">Room Database</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">Retrofit</span>
+                        </div>
                     </div>
                 </div>
-                <div class="wide-tool-card">
-                    <div class="tool-icon-box"><i data-lucide="code-2"></i></div>
-                    <div class="tool-info">
-                        <strong>Web Technologies</strong>
-                        <p>HTML5, CSS3, JavaScript (ES5), Responsive Design</p>
+
+                <div class="tree-branch" onclick="toggleBranch(this)">
+                    <div class="wide-tool-card pillar">
+                        <div class="tool-icon-box"><i data-lucide="code-2"></i></div>
+                        <div class="tool-info">
+                            <strong>Web Technologies</strong>
+                            <p>Click to explore the stack</p>
+                        </div>
+                        <i data-lucide="chevron-down" class="branch-arrow"></i>
+                    </div>
+                    <div class="branch-content">
+                        <div class="badge-grid">
+                            <span class="skill-badge" onclick="connectToProject('web', event)">HTML5</span>
+                            <span class="skill-badge" onclick="connectToProject('web', event)">CSS3</span>
+                            <span class="skill-badge" onclick="connectToProject('web', event)">JavaScript</span>
+                            <span class="skill-badge" onclick="connectToProject('web', event)">Responsive Design</span>
+                        </div>
                     </div>
                 </div>
-                <div class="wide-tool-card">
-                    <div class="tool-icon-box"><i data-lucide="database"></i></div>
-                    <div class="tool-info">
-                        <strong>Backend & Logic</strong>
-                        <p>API Integration, JSON Parsing, Data Persistence</p>
+
+                <div class="tree-branch" onclick="toggleBranch(this)">
+                    <div class="wide-tool-card pillar">
+                        <div class="tool-icon-box"><i data-lucide="database"></i></div>
+                        <div class="tool-info">
+                            <strong>Backend & Logic</strong>
+                            <p>Click to explore the stack</p>
+                        </div>
+                        <i data-lucide="chevron-down" class="branch-arrow"></i>
+                    </div>
+                    <div class="branch-content">
+                        <div class="badge-grid">
+                            <span class="skill-badge" onclick="connectToProject('android', event)">API Integration</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">JSON Parsing</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">Data Persistence</span>
+                            <span class="skill-badge" onclick="connectToProject('android', event)">MVVM Architecture</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,21 +108,30 @@
     <section id="projects" class="container">
         <h2 class="section-title">Featured Builds</h2>
         <div class="projects-stack">
-            <div class="project-featured-card">
-                <div class="project-content">
-                    <span class="hero-subtitle">Android App</span>
-                    <h3>Readstack</h3>
-                    <p>A sophisticated book discovery application built for the Android ecosystem. This project focuses on the intersection of external data and local persistence. I implemented <strong>Retrofit</strong> for seamless API communication with Google Books and <strong>Room Database</strong> to ensure user data remains accessible even without an internet connection.</p>
-                    <a href="https://github.com/mcamp25/readstack-Capstone-.git" class="btn-main">View Build Repo <i data-lucide="github"></i></a>
+            <div class="project-featured-card android">
+                <div class="project-inner">
+                    <div class="project-content">
+                        <span class="hero-subtitle">Android App</span>
+                        <h3>Readstack</h3>
+                        <p>A sophisticated book discovery application built for the Android ecosystem. This project focuses on the intersection of external data and local persistence. 
+                            I implemented <strong>Retrofit</strong> for seamless API communication with Google Books and <strong>Room Database</strong> to ensure user data remains accessible even without an internet connection.</p>
+                        <a href="https://github.com/mcamp25/readstack-Capstone-.git" class="btn-main project-btn">
+                            View Build Repo <i data-lucide="github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-featured-card">
-                <div class="project-content">
-                    <span class="hero-subtitle">Web Tool</span>
-                    <h3>Temperature Converter</h3>
-                    <p>This utility focuses on precision and responsive interaction. Beyond simple mathematics, it demonstrates <strong>clean DOM manipulation</strong> and a mobile-first UI approach. It was built to solve the gap between complex logic and a user interface that feels instantaneous and intuitive.</p>
-                    <a href="https://github.com/mcamp25/temperature-converter-app.git" class="btn-main">View Build Repo <i data-lucide="github"></i></a>
+            <div class="project-featured-card web">
+                <div class="project-inner">
+                    <div class="project-content">
+                        <span class="hero-subtitle">Web Tool</span>
+                        <h3>Temperature Converter</h3>
+                        <p>This utility focuses on precision and responsive interaction. Beyond simple mathematics, it demonstrates <strong>clean DOM manipulation</strong> and a mobile-first UI approach. It was built to solve the gap between complex logic and a user interface that feels instantaneous and intuitive.</p>
+                        <a href="https://github.com/mcamp25/temperature-converter-app.git" class="btn-main project-btn">
+                            View Build Repo <i data-lucide="github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,13 +182,17 @@
                     <h2>Ready to <br><span class="brand-highlight">Collaborate?</span></h2>
                     <p>I'm currently looking for new opportunities. if you want to discuss technical innovations you can reach me below! </p>
                     <div class="contact-methods">
-                        <div class="method-item"><i data-lucide="map-pin"></i> Available for Remote, Hybrid or in Person Work</div>
+                        <div class="method-item"><i data-lucide="map-pin"></i> Available for Remote, Hybrid or In-Person Work</div>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group"><input type="text" id="name" placeholder="Your Name" required></div>
+                    <div class="form-group"><input type="email" id="email" placeholder="Your Email" required></div>
                     <div class="form-group"><textarea id="message" placeholder="How can I help you?" required></textarea></div>
-                    <button type="submit" class="btn-main">Send Message</button>
+                    <button type="submit" class="btn-main" id="btn">
+                        <span id="btxt">Send Message</span>
+                        <i data-lucide="send" id="plane" style="display:none"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -154,19 +202,77 @@
         <p>&copy; 2026 MC.Builds. All rights reserved.</p>
     </footer>
 
+    <div id="lb" class="lightbox-overlay" onclick="this.classList.remove('active')">
+        <button class="lb-close">&times;</button>
+        <img src="" alt="Zoomed view">
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
 
+            window.toggleBranch = function(element) {
+                const isActive = element.classList.contains('active');
+                document.querySelectorAll('.tree-branch').forEach(branch => {
+                    branch.classList.remove('active');
+                });
+                if (!isActive) {
+                    element.classList.add('active');
+                    if(window.lucide) lucide.createIcons();
+                }
+            };
+
+            window.connectToProject = function(tech, event) {
+                if (event) event.stopPropagation();
+                document.querySelectorAll('.project-featured-card').forEach(card => {
+                    card.style.opacity = "0.3";
+                    card.style.transform = "scale(0.95)";
+                });
+
+                const match = document.querySelector(`.project-featured-card.${tech}`);
+                if (match) {
+                    match.style.opacity = "1";
+                    match.style.transform = "scale(1.05)";
+                    match.classList.add('connected-highlight');
+                    match.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                
+                setTimeout(() => {
+                    document.querySelectorAll('.project-featured-card').forEach(card => {
+                        card.style.opacity = "1";
+                        card.style.transform = "scale(1)";
+                        card.classList.remove('connected-highlight');
+                    });
+                }, 3000);
+            };
+
             const contactForm = document.getElementById('contactForm');
+            const btn = document.getElementById('btn');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    const msg = document.getElementById('message').value;
                     const name = document.getElementById('name').value;
-                    window.location.href = `mailto:campm08@gmail.com?subject=Inquiry from ${name}&body=${encodeURIComponent(msg)}`;
+                    const email = document.getElementById('email').value;
+                    const msg = document.getElementById('message').value;
+                    btn.classList.add('sending');
+                    if(window.lucide) lucide.createIcons();
+                    setTimeout(() => {
+                        const mailtoLink = `mailto:campm08@gmail.com?subject=Inquiry from ${name}&body=Sender Email: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+                        window.location.href = mailtoLink;
+                        btn.classList.replace('sending', 'success');
+                        btn.innerHTML = '<span>Message Sent!</span>';
+                    }, 800);
                 });
             }
+
+            document.querySelectorAll('.image-placeholder img').forEach(img => {
+                img.onclick = (e) => {
+                    e.stopPropagation();
+                    const lb = document.getElementById('lb');
+                    lb.querySelector('img').src = img.src;
+                    lb.classList.add('active');
+                };
+            });
         });
     </script>
 </body>
