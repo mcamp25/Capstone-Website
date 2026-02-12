@@ -140,11 +140,11 @@
         <h2 class="section-title">Visual Proof: Readstack</h2>
         <div class="visual-grid mobile-grid">
             <div class="visual-card">
-                <div class="image-placeholder"><img src="images/Readstack-ui1.png" alt="Readstack 1" loading="eager"></div>
+                <div class="image-placeholder"><img src="images/Readstack-ui1.png" alt="Readstack 1" fetchpriority="high"></div>
                 <div class="visual-info"><p>Clean search landing.</p></div>
             </div>
             <div class="visual-card">
-                <div class="image-placeholder"><img src="images/Readstack-ui2.png" alt="Readstack 2" loading="eager"></div>
+                <div class="image-placeholder"><img src="images/Readstack-ui2.png" alt="Readstack 2"></div>
                 <div class="visual-info"><p>Real-time API query.</p></div>
             </div>
             <div class="visual-card">
@@ -224,6 +224,21 @@
     </div>
 
     <script>
+        // Preload images to show them right away
+        const imageSources = [
+            'images/Readstack-ui1.png',
+            'images/Readstack-ui2.png',
+            'images/Readstack-ui3.png',
+            'images/Readstack-ui4.png',
+            'images/Readstack-ui5.png',
+            'images/temperatureconverterui.png',
+            'images/temperatureconverterui1.png'
+        ];
+        imageSources.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
 
