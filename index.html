@@ -304,11 +304,7 @@ function sendEmail() {
     window.open(mailtoLink, '_blank');
 }
 
-emailInput.addEventListener('input', function() {
-  if (emailInput.value.trim() !== '' && !emailAppModal.classList.contains('active')) {
-    emailAppModal.classList.add('active');
-  }
-});
+
 
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault(); // Stop page reload
