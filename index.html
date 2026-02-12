@@ -224,6 +224,7 @@
             <div class="modal-buttons">
                 <button class="modal-btn" onclick="selectEmailApp('gmail')">Gmail</button>
                 <button class="modal-btn" onclick="selectEmailApp('outlook')">Outlook</button>
+                <button class="modal-btn" onclick="selectEmailApp('yahoo')">Yahoo Mail</button>
                 <button class="modal-btn" onclick="selectEmailApp('default')">Default Mail App</button>
             </div>
         </div>
@@ -273,6 +274,7 @@ const contactForm = document.getElementById('contactForm');
 const btn = document.getElementById('btn');
 const hiddenLink = document.getElementById('hiddenMailto');
 const emailAppModal = document.getElementById('emailAppModal');
+const emailInput = document.getElementById('email');
 
 let selectedEmailApp = localStorage.getItem('selectedEmailApp') || null;
 
@@ -293,6 +295,8 @@ function sendEmail() {
         mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=campm08@gmail.com&su=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
     } else if (selectedEmailApp === 'outlook') {
         mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=campm08@gmail.com&subject=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+    } else if (selectedEmailApp === 'yahoo') {
+        mailtoLink = `https://mail.yahoo.com/d/compose-message?to=campm08@gmail.com&subject=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
     } else {
         mailtoLink = `mailto:campm08@gmail.com?subject=Inquiry from ${encodeURIComponent(name)}&body=From: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
     }
@@ -300,17 +304,16 @@ function sendEmail() {
     window.open(mailtoLink, '_blank');
 }
 
+emailInput.addEventListener('input', function() {
+  if (emailInput.value.trim() !== '' && !emailAppModal.classList.contains('active')) {
+    emailAppModal.classList.add('active');
+  }
+});
+
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault(); // Stop page reload
 
-  if (selectedEmailApp) {
-    btn.classList.add('sending');
-    setTimeout(() => {
-      sendEmail();
-      btn.classList.replace('sending', 'success');
-      btn.innerHTML = '<span>Check Mail App!</span>';
-    }, 600);
-  } else {
+  if (!emailAppModal.classList.contains('active')) {
     emailAppModal.classList.add('active');
   }
 });
@@ -336,4 +339,4 @@ contactForm.addEventListener('submit', function(e) {
         });
     </script>
 </body>
-</html>
+</html> 
