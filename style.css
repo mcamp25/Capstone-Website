@@ -1,14 +1,14 @@
 /* --- 1. CORE RESET & BASE STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1e293b; line-height: 1.6; overflow-x: hidden; }
+body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1e293b; line-height: 1.6; overflow-x: hidden; }
 section { scroll-margin-top: 100px; }
 .container { max-width: 1250px; margin: 0 auto; padding: 100px 40px; }
 
 h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-weight: 800; text-align: center; }
 
 /* ---  NAVIGATION --- */
-.navbar-centered { width: 100%; background-color: #0b1120; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: sticky; top: 0; z-index: 1000; }
+.navbar-centered { width: 100%; background-color: #0b1120; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: sticky; top: 0; z-index: 1000; margin: 0; }
 .logo { color: white; font-weight: 800; font-size: 1.3rem; }
 .brand-highlight { color: #2dd4bf; }
 .navbar-centered ul { display: flex; list-style: none; gap: 30px; }
