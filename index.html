@@ -240,7 +240,8 @@
                 <button class="modal-btn" onclick="selectEmailApp('outlook')">Outlook</button>
                 <button class="modal-btn" onclick="selectEmailApp('yahoo')">Yahoo Mail</button>
                 <button class="modal-btn" onclick="selectEmailApp('hotmail')">Hotmail</button>
-                <button class="modal-btn" onclick="selectEmailApp('default')">Default Mail App</button>
+                <hr><button class="modal-btn" onclick="selectEmailApp('default')">Default Mail App</button>
+        </div>
             </div>
         </div>
     </div>
@@ -316,12 +317,18 @@ function sendEmail() {
         mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=campm08@gmail.com&subject=${subject}&body=${body}`;
     } else if (selectedEmailApp === 'yahoo') {
         mailtoLink = `https://mail.yahoo.com/d/compose-message?to=campm08@gmail.com&subject=${subject}&body=${body}`;
-    } else {
+        } else {
+        // This handles 'default' or any unrecognized selection
         mailtoLink = `mailto:campm08@gmail.com?subject=${subject}&body=${body}`;
     }
 
-    window.open(mailtoLink, '_blank');
+    if (selectedEmailApp === 'default' || !selectedEmailApp) {
+        window.location.href = mailtoLink;
+    } else {
+        window.open(mailtoLink, '_blank');
+    }
 }
+  
 
 
 
