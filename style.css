@@ -135,7 +135,7 @@ h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-
     font-size: 0.9rem;
 }
 
-/* ---Galleryfixes --- */
+/* ---Gallery --- */
 .visual-grid { display: grid; gap: 30px; margin-top: 20px; justify-content: center; }
 .mobile-grid { grid-template-columns: repeat(auto-fit, 200px); }
 .web-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
