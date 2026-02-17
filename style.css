@@ -7,7 +7,6 @@ section { scroll-margin-top: 100px; }
 
 h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-weight: 800; text-align: center; }
 
-/* ---  Sticking the nav to the top so it is always there, using navy to ground the header --- */
 .navbar-centered { width: 100%; background-color: #0b1120; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: sticky; top: 0; z-index: 1000; margin: 0; }
 .logo { color: white; font-weight: 800; font-size: 1.3rem; }
 .brand-highlight { color: #2dd4bf; }
@@ -31,7 +30,7 @@ h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-
 .about-split h2 { font-size: 3.2rem; line-height: 1.1; color: #0b1120; text-align: center; }
 .intro-text { font-size: 1.35rem; border-left: 6px solid #2dd4bf; padding-left: 45px; color: #334155; font-weight: 700; }
 
-/* --- Toolkit Skill Tree-Accordion Logic --- */
+/* --- Toolkit Skill Tree --- */
 .tools-section { background-color: #f8fafc; padding: 100px 0; }
 .flex-stack { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
 .tree-branch { width: 100%; }
@@ -47,7 +46,7 @@ h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-
 .branch-arrow { margin-left: auto; transition: transform 0.3s; color: #94a3b8; }
 .tree-branch.active .branch-arrow { transform: rotate(180deg); color: #2dd4bf; }
 
-/* ---  Interactive Project Cards with hover effects --- */
+/* ---Project Cards --- */
 .projects-stack { display: flex; flex-direction: column; gap: 60px; }
 
 .project-featured-card {
