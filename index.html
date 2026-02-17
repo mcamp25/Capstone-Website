@@ -313,7 +313,6 @@ function sendEmail() {
     if (selectedEmailApp === 'gmail') {
         mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=campm08@gmail.com&su=${subject}&body=${body}`;
     } else if (selectedEmailApp === 'outlook' || selectedEmailApp === 'hotmail') {
-        // Hotmail and Outlook now share the same webmail interface
         mailtoLink = `https://outlook.live.com/mail/0/deeplink/compose?to=campm08@gmail.com&subject=${subject}&body=${body}`;
     } else if (selectedEmailApp === 'yahoo') {
         mailtoLink = `https://mail.yahoo.com/d/compose-message?to=campm08@gmail.com&subject=${subject}&body=${body}`;
