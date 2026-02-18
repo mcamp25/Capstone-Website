@@ -14,7 +14,7 @@ h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-
 .navbar-centered a { color: #94a3b8; text-decoration: none; font-weight: 600; transition: 0.3s; }
 .navbar-centered a:hover { color: #2dd4bf; }
 
-/* Hero */
+/* --- Hero --- */
 .hero { background-color: #0b1120; color: white; padding: 140px 20px; text-align: center; }
 .hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800; margin-bottom: 20px; }
 .hero-subtitle { color: #2dd4bf; letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; display: block; }
@@ -25,12 +25,12 @@ h2.section-title { font-size: 2.5rem; color: #0b1120; margin-bottom: 50px; font-
 .btn-github, .btn-linkedin { border: 1px solid white; color: white; padding: 12px 50px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
 .btn-github:hover, .btn-linkedin:hover { box-shadow: 0 0 25px rgba(45, 212, 191, 0.9); transform: translateY(-4px); color: #2dd4bf; }
 
-/* About */
+/*--- About --- */
 .about-split { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
 .about-split h2 { font-size: 3.2rem; line-height: 1.1; color: #0b1120; text-align: center; }
 .intro-text { font-size: 1.35rem; border-left: 6px solid #2dd4bf; padding-left: 45px; color: #334155; font-weight: 700; }
 
-/* --- Toolkit Skill Tree --- */
+/*--- Toolkit Skill Tree ---*/
 .tools-section { background-color: #f8fafc; padding: 100px 0; }
 .flex-stack { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
 .tree-branch { width: 100%; }
